@@ -1,3 +1,4 @@
+#generating a 3X3 matrix with 9 random prime numbers
 import random
 def asal(sayi):    
    for i in range(2,sayi):
@@ -7,6 +8,15 @@ def asal(sayi):
        liste.append(sayi)
 liste = list()
 for i in range(1,101):
-    asal(i)   
+    asal(i) 
+dizi = []  
 for i in range(3):
-   print (str(random.choice(liste)) + " " +str(random.choice(liste))+" "+str(random.choice(liste)))
+    dizi.append([])
+    for j in range(3):
+        rnd = random.choice(liste)
+        dizi[i].append(rnd)
+        liste.remove(rnd)
+for i in dizi:
+    for j in i:
+        print(j, end=" ")
+    print("")
